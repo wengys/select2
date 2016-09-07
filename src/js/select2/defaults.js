@@ -33,7 +33,9 @@ define([
   './dropdown/selectOnClose',
   './dropdown/closeOnSelect',
 
-  './i18n/en'
+  './i18n/zh-CN',
+
+  './custom/simple-pinyin-matcher'
 ], function ($, require,
 
              ResultsList,
@@ -49,7 +51,7 @@ define([
              Dropdown, DropdownSearch, HidePlaceholder, InfiniteScroll,
              AttachBody, MinimumResultsForSearch, SelectOnClose, CloseOnSelect,
 
-             EnglishTranslation) {
+             EnglishTranslation,simplePinyinMatcher) {
   function Defaults () {
     this.reset();
   }
@@ -247,7 +249,7 @@ define([
 
     if ($.isArray(options.language)) {
       var languages = new Translation();
-      options.language.push('en');
+      options.language.push('zh-CN');
 
       var languageNames = options.language;
 
@@ -284,7 +286,7 @@ define([
       options.translations = languages;
     } else {
       var baseTranslation = Translation.loadPath(
-        this.defaults.amdLanguageBase + 'en'
+        this.defaults.amdLanguageBase + 'zh-CN'
       );
       var customTranslation = new Translation(options.language);
 
@@ -359,7 +361,7 @@ define([
       dropdownAutoWidth: false,
       escapeMarkup: Utils.escapeMarkup,
       language: EnglishTranslation,
-      matcher: matcher,
+      matcher: simplePinyinMatcher,
       minimumInputLength: 0,
       maximumInputLength: 0,
       maximumSelectionLength: 0,

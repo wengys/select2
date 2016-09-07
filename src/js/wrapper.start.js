@@ -1,7 +1,7 @@
 /*!
- * Select2 <%= package.version %>
+ * Select2 <%= package.version %> Custom Edition (default Chinese support)
  * https://select2.github.io
- *
+ * https://github.com/wengys/select2
  * Released under the MIT license
  * https://github.com/select2/select2/blob/master/LICENSE.md
  */
