@@ -6894,7 +6894,7 @@ S2.define('select2/custom/CascadeResult',[
     'select2/results',
     'select2/dropdown/hidePlaceholder'
 ], function($, Utils, ResultsList, HidePlaceholder) {
-    var CascadeResult = function CascadeResult($element, options, dataAdapter) {
+    function CascadeResult ($element, options, dataAdapter) {
         this.$element = $element;
         this.data = dataAdapter;
         this.options = options;
@@ -7234,11 +7234,10 @@ S2.define('select2/custom/CascadeResult',[
         this.$results.remove();
     };
 
-    CascadeResult = Utils.Decorate(
+    return Utils.Decorate(
         CascadeResult,
         HidePlaceholder
     );
-    return CascadeResult;
 });
 
   // Return the AMD loader configuration so it can be used outside of this file

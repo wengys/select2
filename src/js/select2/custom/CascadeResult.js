@@ -4,7 +4,7 @@ define([
     'select2/results',
     'select2/dropdown/hidePlaceholder'
 ], function($, Utils, ResultsList, HidePlaceholder) {
-    var CascadeResult = function CascadeResult($element, options, dataAdapter) {
+    function CascadeResult ($element, options, dataAdapter) {
         this.$element = $element;
         this.data = dataAdapter;
         this.options = options;
@@ -344,9 +344,8 @@ define([
         this.$results.remove();
     };
 
-    CascadeResult = Utils.Decorate(
+    return Utils.Decorate(
         CascadeResult,
         HidePlaceholder
     );
-    return CascadeResult;
 });
