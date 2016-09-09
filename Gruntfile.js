@@ -7,7 +7,8 @@ module.exports = function (grunt) {
     'jquery-mousewheel', // shimmed for non-full builds
     'select2/compat/matcher',
     'select2/custom/simple-pinyin',
-    'select2/custom/simple-pinyin-matcher'
+    'select2/custom/simple-pinyin-matcher',
+    "select2/custom/CascadeResult"
   ];
 
   fullIncludes = [
