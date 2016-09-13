@@ -7234,10 +7234,7 @@ S2.define('select2/custom/CascadeResult',[
         this.$results.remove();
     };
 
-    return Utils.Decorate(
-        CascadeResult,
-        HidePlaceholder
-    );
+    return CascadeResult;
 });
 
   // Return the AMD loader configuration so it can be used outside of this file

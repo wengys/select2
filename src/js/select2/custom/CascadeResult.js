@@ -344,8 +344,5 @@ define([
         this.$results.remove();
     };
 
-    return Utils.Decorate(
-        CascadeResult,
-        HidePlaceholder
-    );
+    return CascadeResult;
 });
