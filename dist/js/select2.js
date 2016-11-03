@@ -4338,6 +4338,25 @@ S2.define('select2/dropdown/attachBody',[
   return AttachBody;
 });
 
+S2.define('select2/dropdown/attachContainer',[
+
+], function () {
+  function AttachContainer (decorated, $element, options) {
+    decorated.call(this, $element, options);
+  }
+
+  AttachContainer.prototype.position =
+    function (decorated, $dropdown, $container) {
+    var $dropdownContainer = $container.find('.dropdown-wrapper');
+    $dropdownContainer.append($dropdown);
+
+    $dropdown.addClass('select2-dropdown--below');
+    $container.addClass('select2-container--below');
+  };
+
+  return AttachContainer;
+});
+
 S2.define('select2/dropdown/minimumResultsForSearch',[
 
 ], function () {
@@ -5116,6 +5135,7 @@ S2.define('select2/defaults',[
   './dropdown/hidePlaceholder',
   './dropdown/infiniteScroll',
   './dropdown/attachBody',
+  './dropdown/attachContainer',
   './dropdown/minimumResultsForSearch',
   './dropdown/selectOnClose',
   './dropdown/closeOnSelect',
@@ -5136,7 +5156,7 @@ S2.define('select2/defaults',[
              MinimumInputLength, MaximumInputLength, MaximumSelectionLength,
 
              Dropdown, DropdownSearch, HidePlaceholder, InfiniteScroll,
-             AttachBody, MinimumResultsForSearch, SelectOnClose, CloseOnSelect,
+             AttachBody, AttachContainer, MinimumResultsForSearch, SelectOnClose, CloseOnSelect,
 
              EnglishTranslation,simplePinyinMatcher) {
   function Defaults () {
@@ -5269,7 +5289,7 @@ S2.define('select2/defaults',[
 
       options.dropdownAdapter = Utils.Decorate(
         options.dropdownAdapter,
-        AttachBody
+        AttachContainer
       );
     }
 
